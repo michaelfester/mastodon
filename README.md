@@ -1,5 +1,4 @@
-mastodont
-=========
+# Mastodont
 
 A powerful next-word prediction engine
 
