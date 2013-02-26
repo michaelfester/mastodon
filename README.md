@@ -134,3 +134,9 @@ The C++ unit tests, located at `cpp/tests/unit/test.cpp`, are based on the `Unit
 ```
 make test
 ```
+
+## Generating statistics
+
+## License
+
+Mastodont is released under the MIT license. See [LICENSE.md](LICENSE.md).
