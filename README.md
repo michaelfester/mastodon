@@ -1,4 +1,4 @@
-# Mastodont
+# Mastodon
 
 A powerful next-word prediction engine
 
@@ -138,4 +138,4 @@ make test
 
 ## License
 
-Mastodont is released under the MIT license. See [LICENSE.md](LICENSE.md).
+Mastodon is released under the MIT license. See [LICENSE.md](LICENSE.md).
