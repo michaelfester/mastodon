@@ -6,22 +6,27 @@ A simple next-word prediction engine
 
 ```
 # Fetch a sample corpus
-mkdir data; mkdir data/samples
-curl http://norvig.com/big.txt -o data/samples/big.txt
+$ mkdir data
+$ mkdir data/samples
+$ curl http://norvig.com/big.txt -o data/samples/big.txt
 
 # Generate stats using NSP
-mkdir data/output; cd scripts
-./generate_stats.sh ../data/samples/big.txt ../data/output/
+$ mkdir data/output
+$ cd scripts
+$ ./generate_stats.sh ../data/samples/big.txt ../data/output/
 
 # Create binary dictionaries
-cd ..; mkdir dictionaries; mkdir dictionaries/test; cd python
-python makedict.py -u ../data/output/unigrams.txt -n ../data/output/ngrams2.ll,../data/output/ngrams3.ll,../data/output/ngrams4.ll -o ../dictionaries/test/big.dict
+$ cd ..
+$ mkdir dictionaries
+$ mkdir dictionaries/test
+$ cd python
+$ python makedict.py -u ../data/output/unigrams.txt -n ../data/output/ngrams2.ll,..$ /data/output/ngrams3.ll,../data/output/ngrams4.ll -o ../dictionaries/test/big.dict
 
 # Create binary dictionaries for unit tests
-python makedict.py -t
-python unittests.py
-cd ../cpp
-make test
+$ python makedict.py -t
+$ python unittests.py
+$ cd ../cpp
+$ make test
 ```
 
 ## Generating statistics
@@ -32,14 +37,14 @@ A sample corpus can be found at https://dl.dropbox.com/u/228601/8pen/big.txt.
 
 
 ```
-curl https://dl.dropbox.com/u/228601/8pen/big.txt -o data/samples/big.txt
+$ curl https://dl.dropbox.com/u/228601/8pen/big.txt -o data/samples/big.txt
 ```
 
 We can generate the desired statistics in the following way:
 
 ```
-cd scripts
-./generate_stats.sh INPUT_FILE OUTPUT_DIR
+$ cd scripts
+$ ./generate_stats.sh INPUT_FILE OUTPUT_DIR
 ```
 
 ### Unigrams
@@ -73,7 +78,7 @@ did<>not<>8 9798.6723
 To generate a binary dictionary using output of the NSP, a script `makedict.py` in the `python/` folder is available. Example usage:
 
 ```
-python makedict.py -u UNIGRAM_FILE -n BIGRAM_FILE,TRIGRAM_FILE,FOURGRAM_FILE -o OUTPUT_FILE
+$ python makedict.py -u UNIGRAM_FILE -n BIGRAM_FILE,TRIGRAM_FILE,FOURGRAM_FILE -o OUTPUT_FILE
 ```
 
 ## Using dictionaries
@@ -116,22 +121,25 @@ Note that querying for word completions is not yet implemented in C++.
 ## Unit tests
 
 The unit tests are designed to be used with a simple dictionary, located at `dictionaries/test/test.dict`, and generated using the `-t` option:
+
 ```
-python makedict.py -t
+$ python makedict.py -t
 ```
 
 ### Python
 
 The Python unit tests use the `unittest` module, and are available in `python/unittests.py`:
+
 ```
-python unittests.py
+$ python unittests.py
 ```
 
 ### C++
 
 The C++ unit tests, located at `cpp/tests/unit/test.cpp`, are based on the `UnitTest++` framework (included). Simply use the provided `Makefile` in the `cpp` folder to run the tests:
+
 ```
-make test
+$ make test
 ```
 
 ## Generating statistics
