@@ -33,7 +33,7 @@ $ make test
 
 To create a binary dictionary, we need data created from the N-Gram Statistics Package (NSP), available at http://www.d.umn.edu/~tpederse/nsp.html. The script `generate_stats.sh` in the `scripts/` folder serves this purpose.
 
-A sample corpus can be found at https://dl.dropbox.com/u/228601/8pen/big.txt.
+A sample corpus can be found at http://norvig.com/big.txt.
 
 
 ```
