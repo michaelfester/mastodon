@@ -1,6 +1,6 @@
 # Mastodon
 
-A powerful next-word prediction engine
+A simple next-word prediction engine
 
 ## Quick start
 
