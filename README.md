@@ -7,7 +7,7 @@ A powerful next-word prediction engine
 ```
 # Fetch a sample corpus
 mkdir data; mkdir data/samples
-curl https://dl.dropbox.com/u/228601/8pen/big.txt -o data/samples/big.txt
+curl http://norvig.com/big.txt -o data/samples/big.txt
 
 # Generate stats using NSP
 mkdir data/output; cd scripts
