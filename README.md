@@ -2,6 +2,10 @@
 
 A simple next-word prediction engine
 
+## Note
+
+ Mastodon is in a very early stage, so early that nothing has yet been committed to `master`. Everything right now it in the `develop` branch.
+
 ## Quick start
 
 ```
