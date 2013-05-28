@@ -11,3 +11,8 @@
 *.lai
 *.la
 *.a
+
+# Misc
+.DS_Store
+*.sublime-project
+*.sublime-workspace
