@@ -146,4 +146,4 @@ $ make test
 
 ## License
 
-Mastodon is released under the MIT license. See [LICENSE.md](LICENSE.md).
+Mastodon is released under the MIT license. See [LICENSE.md](https://github.com/michaelfester/mastodon/blob/develop/LICENSE.md).
