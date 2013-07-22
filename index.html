@@ -23,23 +23,21 @@
         </header>
 
         <section id="downloads" class="clearfix">
-          <a href="https://github.com/michaelfester/Mastodon/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/michaelfester/Mastodon/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/michaelfester/Mastodon" id="view-on-github" class="button"><span>View on GitHub</span></a>
+          <a href="https://github.com/michaelfester/mastodon/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/michaelfester/mastodon/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/michaelfester/mastodon" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
         <hr>
 
         <section id="main_content">
-          <h1>Mastodon</h1>
+          <h1>
+<a name="mastodon" class="anchor" href="#mastodon"><span class="octicon octicon-link"></span></a>Mastodon</h1>
 
 <p>A simple next-word prediction engine</p>
 
-<h2>Note</h2>
-
-<p>Mastodon is in a very early stage, so early that nothing has yet been committed to <code>master</code>. Everything right now it in the <code>develop</code> branch.</p>
-
-<h2>Quick start</h2>
+<h2>
+<a name="quick-start" class="anchor" href="#quick-start"><span class="octicon octicon-link"></span></a>Quick start</h2>
 
 <pre><code># Fetch a sample corpus
 $ mkdir data
@@ -65,7 +63,8 @@ $ cd ../cpp
 $ make test
 </code></pre>
 
-<h2>Generating statistics</h2>
+<h2>
+<a name="generating-statistics" class="anchor" href="#generating-statistics"><span class="octicon octicon-link"></span></a>Generating statistics</h2>
 
 <p>To create a binary dictionary, we need data created from the N-Gram Statistics Package (NSP), available at <a href="http://www.d.umn.edu/%7Etpederse/nsp.html">http://www.d.umn.edu/~tpederse/nsp.html</a>. The script <code>generate_stats.sh</code> in the <code>scripts/</code> folder serves this purpose.</p>
 
@@ -80,7 +79,8 @@ $ make test
 $ ./generate_stats.sh INPUT_FILE OUTPUT_DIR
 </code></pre>
 
-<h3>Unigrams</h3>
+<h3>
+<a name="unigrams" class="anchor" href="#unigrams"><span class="octicon octicon-link"></span></a>Unigrams</h3>
 
 <p>The script generates a simple word frequency list <code>unigram.txt</code> in <code>OUTPUT_DIR</code>, in which each line is of the form <code>weight unigram</code>. Example output:</p>
 
@@ -95,7 +95,8 @@ $ ./generate_stats.sh INPUT_FILE OUTPUT_DIR
 
 <p>The weight is simply the number of occurences of the corresponding word in the corpus.</p>
 
-<h3>N-grams</h3>
+<h3>
+<a name="n-grams" class="anchor" href="#n-grams"><span class="octicon octicon-link"></span></a>N-grams</h3>
 
 <p>The script then generates a lists of bi-, tri-, and four-grams (<code>ngrams2.ll</code>, <code>ngrams3.ll</code>, <code>ngrams4.ll</code>, also locaed in <code>OUTPUT_DIR</code>) of the form <code>unigram&lt;&gt;unigram&lt;&gt;...&lt;&gt;rank weight</code> (we ignore <code>rank</code> for now). Example output:</p>
 
@@ -104,14 +105,16 @@ in&lt;&gt;the&lt;&gt;6 10335.9606
 did&lt;&gt;not&lt;&gt;8 9798.6723
 </code></pre>
 
-<h2>Generating dictionaries</h2>
+<h2>
+<a name="generating-dictionaries" class="anchor" href="#generating-dictionaries"><span class="octicon octicon-link"></span></a>Generating dictionaries</h2>
 
 <p>To generate a binary dictionary using output of the NSP, a script <code>makedict.py</code> in the <code>python/</code> folder is available. Example usage:</p>
 
 <pre><code>$ python makedict.py -u UNIGRAM_FILE -n BIGRAM_FILE,TRIGRAM_FILE,FOURGRAM_FILE -o OUTPUT_FILE
 </code></pre>
 
-<h2>Using dictionaries</h2>
+<h2>
+<a name="using-dictionaries" class="anchor" href="#using-dictionaries"><span class="octicon octicon-link"></span></a>Using dictionaries</h2>
 
 <p>Implementations in Python and C++ are currently available for loading a binary dictionary and querying it for:</p>
 
@@ -119,7 +122,8 @@ did&lt;&gt;not&lt;&gt;8 9798.6723
 <li>Corrections</li>
 <li>Completions (Python only)</li>
 <li>Next-word predictions</li>
-</ul><h3>Python</h3>
+</ul><h3>
+<a name="python" class="anchor" href="#python"><span class="octicon octicon-link"></span></a>Python</h3>
 
 <p>Here is a simple usage in Python:</p>
 
@@ -129,7 +133,8 @@ bindict.get_corrections('yuur')    # =&gt; ['your','you','year']
 bindict.get_completions('yo', 2)   # =&gt; ['you','your']
 </code></pre>
 
-<h3>C++</h3>
+<h3>
+<a name="c" class="anchor" href="#c"><span class="octicon octicon-link"></span></a>C++</h3>
 
 <p>Here is a simple usage in C++:</p>
 
@@ -146,37 +151,42 @@ vector&lt;weighted_string&gt; corrections = bindict.getCorrections("you", holder
 
 <p>Note that querying for word completions is not yet implemented in C++.</p>
 
-<h2>Unit tests</h2>
+<h2>
+<a name="unit-tests" class="anchor" href="#unit-tests"><span class="octicon octicon-link"></span></a>Unit tests</h2>
 
 <p>The unit tests are designed to be used with a simple dictionary, located at <code>dictionaries/test/test.dict</code>, and generated using the <code>-t</code> option:</p>
 
 <pre><code>$ python makedict.py -t
 </code></pre>
 
-<h3>Python</h3>
+<h3>
+<a name="python-1" class="anchor" href="#python-1"><span class="octicon octicon-link"></span></a>Python</h3>
 
 <p>The Python unit tests use the <code>unittest</code> module, and are available in <code>python/unittests.py</code>:</p>
 
 <pre><code>$ python unittests.py
 </code></pre>
 
-<h3>C++</h3>
+<h3>
+<a name="c-1" class="anchor" href="#c-1"><span class="octicon octicon-link"></span></a>C++</h3>
 
 <p>The C++ unit tests, located at <code>cpp/tests/unit/test.cpp</code>, are based on the <code>UnitTest++</code> framework (included). Simply use the provided <code>Makefile</code> in the <code>cpp</code> folder to run the tests:</p>
 
 <pre><code>$ make test
 </code></pre>
 
-<h2>Generating statistics</h2>
+<h2>
+<a name="generating-statistics-1" class="anchor" href="#generating-statistics-1"><span class="octicon octicon-link"></span></a>Generating statistics</h2>
 
-<h2>License</h2>
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
-<p>Mastodon is released under the MIT license. See <a href="LICENSE.md">LICENSE.md</a>.</p>
+<p>Mastodon is released under the MIT license. See <a href="https://github.com/michaelfester/mastodon/blob/develop/LICENSE.md">LICENSE.md</a>.</p>
         </section>
 
         <footer>
           Mastodon is maintained by <a href="https://github.com/michaelfester">michaelfester</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 
                   <script type="text/javascript">
