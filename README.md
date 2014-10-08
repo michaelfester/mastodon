@@ -19,8 +19,8 @@ $ ./generate_stats.sh ../data/samples/big.txt ../data/output/
 $ cd ..
 $ mkdir dictionaries
 $ mkdir dictionaries/test
-$ cd python
-$ python makedict.py -u ../data/output/unigrams.txt -n ../data/output/ngrams2.ll,..$ /data/output/ngrams3.ll,../data/output/ngrams4.ll -o ../dictionaries/test/big.dict
+$ cd scripts
+$ python makedict.py -u ../data/output/unigrams.txt -n ../data/output/ngrams2.ll,../data/output/ngrams3.ll,../data/output/ngrams4.ll -o ../dictionaries/test/big.dict
 
 # Create binary dictionaries for unit tests
 $ python makedict.py -t
