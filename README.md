@@ -29,9 +29,14 @@ $ cd ../cpp
 $ make test
 ```
 
+## Installing dependencies
+ 
+N-Gram Statistics Package (NSP) library should installed first. Download it from [here](https://cpan.metacpan.org/authors/id/T/TP/TPEDERSE/Text-NSP-1.31.tar.gz) and follow [instllation instructions](https://metacpan.org/pod/distribution/Text-NSP/doc/INSTALL.pod).
+
+
 ## Generating statistics
 
-To create a binary dictionary, we need data created from the N-Gram Statistics Package (NSP), available at http://www.d.umn.edu/~tpederse/nsp.html. The script `generate_stats.sh` in the `scripts/` folder serves this purpose.
+The script `generate_stats.sh` in the `scripts/` folder serves this purpose.
 
 A sample corpus can be found at http://norvig.com/big.txt.
 
